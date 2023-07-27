@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Jua&family=Sansita:ital@0;1&display=swap" rel="stylesheet">
+    
+    <title>주차 키오스크</title>
+    <script
+        src="https://kit.fontawesome.com/7a25ace7c8.js"
+        crossorigin="anonymous"
+    ></script>
+    <script src="main.js" defer></script>
+
+    <style>
+        .menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 40vh;
+            background-color: #363636;
+            margin: 0;
+        }
+        
+        .flex {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .numPad {
+            background: #e6b49c;
+            width: 50%;
+            height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .numPad .disp {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .numPad .disp input {
+            width: 50%;
+            outline-color: white;
+            outline-width: 30px;
+
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+            border: 10px solid white;
+
+            border-radius: 30px;
+            background: none;
+            text-align: center;
+            color: #363636;
+            font-family: 'Jua';
+            font-size: 2rem;
+        }
+
+        .numPad.nums {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .numPad .nums > .r div{
+            width: 50px;
+            height: 50px;
+            
+            border: 8px solid #444;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            cursor:pointer;
+        }
+
+        .typing-text{
+            font-family: 'Jua', cursive;
+            font-size: 2rem;
+            color:white;
+            border-right: 3px solid white;
+            animation: blink .5s infinite, typing 2s steps(22);
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        @keyframes blink {
+            50%{
+                border-color: transparent;
+            }
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            
+            to {
+                width: 283px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div>
+            <header>
+                <nav class="navbar">
+                    <div class="navbar__logo">
+                        <i class="fa-solid fa-square-parking"></i>
+                        <a href="">주자장 자리 예약 서비스</a>
+                    </div>
+            
+                    <ul class="navbar__menu">
+                        <li><a href="">홈</a></li>
+                        <li><a href="">주차 현황</a></li>
+                        <li><a href="">주차 요금</a></li>
+                        <li><a href="">FAQ</a></li>
+                        <li><a href="">오시는 길</a></li>
+                    </ul>
+            
+                    <ul class="navbar__icons">
+                        <li><i class="fa-brands fa-twitter"></i></li>
+                        <li><i class="fa-solid fa-car"></i></li>
+                    </ul>
+            
+                    <a href="#" class="navbar__toggleBtn">
+                        <i class="fa-solid fa-bars"></i>
+                    </a>
+                </nav>
+            </header>
+        </div>
+        
+        <div>
+            <section class="menu">
+                <div class="content">
+                    <p class="typing-text">
+                        <strong>차번호</strong>
+                        를 확인해주세요.<br/></p>
+                    <img src="https://www.molit.go.kr/carplate/images/carnumber.png">
+                </div>
+            </section>
+        </div>
+        
+        <div>
+            <section class="flex">
+                <div class="numPad">
+                    <div class="disp">
+                        <input type="text">
+                    </div>
+                    <div class="nums">
+                        <div class="flex r r1">
+                            <div><span>1</span></div>
+                            <div><span>2</span></div>
+                            <div><span>3</span></div>
+                        </div>
+        
+                        <div class="flex r r2">
+                            <div><span>4</span></div>
+                            <div><span>5</span></div>
+                            <div><span>6</span></div>
+                        </div>
+        
+                        <div class="flex r r3">
+                            <div><span>7</span></div>
+                            <div><span>8</span></div>
+                            <div><span>9</span></div>
+                        </div>
+        
+                        <div class="flex r r4">
+                            <div><span>*</span></div>
+                            <div><span>0</span></div>
+                            <div><span>#</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
